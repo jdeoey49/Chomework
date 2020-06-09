@@ -11,9 +11,6 @@ void Checking::calculateDailyInterest()
 	if (surplus > 0)
 	{
 		Account::depositMoney(surplus * rate_ / kDaysPerMonth / kMonthsPerYear);
-		//Account::operator+=(surplus * rate_ / kDaysPerMonth / kMonthsPerYear);
-		// we want to use the overloaded += operator of the base class, Account, because it does not count against
-		// limited number of transations, i.e., there is no fee checking there.
 	}
 }
 void Checking::withdrawMoney(double amount)

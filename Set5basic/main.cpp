@@ -16,13 +16,13 @@ int main()
 	for (int i = 1; i <= kDaysPerMonth; i++)
 	{
 		c.depositMoney(i * 5.0);
-		//c += i * 5.0;
+		
 		c.withdrawMoney(i * 2.0);
-		//c -= i * 2.0;
+		
 		s.depositMoney(i * 5.0);
-		//s += i * 5.0;
+		
 		s.withdrawMoney(i * 2.0);
-		//s -= i * 2.0;
+		
 		c.calculateDailyInterest();
 		s.calculateDailyInterest();
 		if (i % 10 == 0)
@@ -37,7 +37,7 @@ int main()
 	
 	c.resetTransactions();
 	c.withdrawMoney(100);
-	//c -= 100.0;
+	
 	cout << fixed << setprecision(2)
 		<< "Free withdrawal from checking account, that's nice: "
 		<< c.getBalance() << endl;

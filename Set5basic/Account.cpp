@@ -9,7 +9,6 @@ void Account::depositMoney(double amount)
 {
 	balance_ = balance_ + amount;
 }
-//void operator+=(double amount);
 void Account::withdrawMoney(double amount)
 {
 	if(amount < balance_)
@@ -23,7 +22,6 @@ void Account::withdrawMoney(double amount)
 	}
 	
 }
-//void operator-=(double amount);
 double Account::getBalance() const
 {
 	return balance_;

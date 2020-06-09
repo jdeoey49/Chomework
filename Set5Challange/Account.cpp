@@ -5,22 +5,13 @@ Account::Account(double balance)
 {
 	setBalance(balance);
 }
-void Account::depositMoney(double amount)
+void Account::operator+=(double amount)
 {
 	balance_ = balance_ + amount;
 }
-void Account::withdrawMoney(double amount)
+void Account::operator-=(double amount)
 {
-	if(amount < balance_)
-	{
 		balance_ = balance_ - amount;
-	}
-	else
-	{
-		cout << "balance insufficient in account" << endl;
-		exit(1);
-	}
-	
 }
 double Account::getBalance() const
 {

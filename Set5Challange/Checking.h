@@ -5,8 +5,8 @@ class Checking:public Account
 	public:
 		Checking(double am);
 		void calculateDailyInterest();
-		void withdrawMoney(double amount);
-		void depositMoney(double amount);
+		void operator+=(double amount);
+		void operator-=(double amount);
 		void resetTransactions();
 	private:
 		float rate_=0.01;

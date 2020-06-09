@@ -12,11 +12,12 @@ void Savings::calculateDailyInterest()
 	newbalance = oldbalance + oldbalance * rate_ /kDaysPerMonth/kMonthsPerYear;
 	Account::setBalance(newbalance);
 }
-void Savings::withdrawMoney(double amount)
+void Savings::operator-=(double amount)
 {
 	if ((getBalance() - amount) > 0.0)
-		Account::withdrawMoney(amount);
-	else {
+		Account::operator-=(amount);
+	else 
+	{
 		cout << "Insufficient funds available in saving account \n";
 	}
 }

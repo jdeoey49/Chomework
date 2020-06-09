@@ -10,14 +10,14 @@ void Checking::calculateDailyInterest()
 	double surplus = getBalance() - min_balance_;
 	if (surplus > 0)
 	{
-		Account::depositMoney(surplus * rate_ / kDaysPerMonth / kMonthsPerYear);
+		Account::operator+=(surplus * rate_ / kDaysPerMonth / kMonthsPerYear);
 	}
 }
-void Checking::withdrawMoney(double amount)
+void Checking::operator-=(double amount)
 {
 	if ((getBalance() - amount) > 0.0)
 	{
-		Account::withdrawMoney(amount);
+		Account::operator-=(amount);
 		transaction_++;
 		checkForFee();
 	}
@@ -34,14 +34,14 @@ void Checking::checkForFee()
 {
 	if (transaction_ > 3)
 	{
-		Account::withdrawMoney(1.0);
+		Account::operator-=(1.0);
 	}
 	else
 		return;
 }
-void Checking::depositMoney(double amount)
+void Checking::operator+=(double amount)
 {
-	Account::depositMoney(amount);
+	Account::operator+=(amount);
 	transaction_++;
 	checkForFee();
 }

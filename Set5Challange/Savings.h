@@ -5,7 +5,7 @@ class Savings:public Account
 	public:
 		Savings(double balance);
 		void calculateDailyInterest();
-		void withdrawMoney(double amount);
+		void operator-=(double amount);
 	private:
 		double rate_=0.02;
 };

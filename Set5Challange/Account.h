@@ -15,8 +15,8 @@ class Account
 {
 public:
    explicit Account(double balance);
-   void depositMoney(double amount);
-   void withdrawMoney(double amount);
+   void operator+=(double amount);
+   void operator-=(double amount);
    double getBalance() const;
    void setBalance(double balance);
 private:

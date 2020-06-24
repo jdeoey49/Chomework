@@ -74,6 +74,12 @@ int main()
    for (int i = 0; i<employees.size(); ++i)
 	   virtualViaReference(*(employees[i])); // note dereferencing
       
+   cout << "Virtual function calls made off base-class references:\n\n";
+   for (size_t i = 0; i < employees.size(); ++i)
+   {
+	   Employee& emploeeRef = *employees[i];//a reference must refer to a valid object when initialized
+	   virtualViaReference(emploeeRef);
+   }
 } // end main
 
 // call Employee virtual functions print and earnings off a 
